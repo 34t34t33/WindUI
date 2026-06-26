@@ -6761,18 +6761,19 @@ ThemeTag={
 TextColor3="Text",
 BackgroundColor3="Text"
 },
-TextSize=15,
+TextSize=11,
 BackgroundTransparency=1,
-TextTransparency=aq=="Dropdown"and.6 or.35,
+TextTransparency=aq=="Dropdown"and.7 or.5,
 LayoutOrder=999,
 AutomaticSize="Y",
-TextWrapped=true,
+TextWrapped=false,
+TextTruncate="AtEnd",
 Size=UDim2.new(1,0,0,0),
 Visible=az.Desc and true or false,
 Name="Desc",
 }),
 ak("UIListLayout",{
-Padding=UDim.new(0,ao.TabPadding/3),
+Padding=UDim.new(0,1),
 FillDirection="Vertical",
 }),
 })
