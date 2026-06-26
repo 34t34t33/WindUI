@@ -6603,7 +6603,7 @@ end
 if ay then
 al(aw.UIElements.TabItem,0.1,{ImageTransparency=1}):Play()
 al(aw.UIElements.TabItem.Highlight,0.1,{ImageTransparency=1}):Play()
-al(aw.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=0.6}):Play()
+al(aw.UIElements.TabItem.Frame.TextLabel,0.1,{TextTransparency=0.6}):Play()
 if aw.UIElements.TabIcon then
 al(aw.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=0.6}):Play()
 end
@@ -6614,14 +6614,14 @@ else
 if aw.Selected then
 al(aw.UIElements.TabItem,0.1,{ImageTransparency=0.95}):Play()
 al(aw.UIElements.TabItem.Highlight,0.1,{ImageTransparency=0.75}):Play()
-al(aw.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=0}):Play()
+al(aw.UIElements.TabItem.Frame.TextLabel,0.1,{TextTransparency=0}):Play()
 if aw.UIElements.TabIcon then
 al(aw.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=0}):Play()
 end
 else
 al(aw.UIElements.TabItem,0.1,{ImageTransparency=1}):Play()
 al(aw.UIElements.TabItem.Highlight,0.1,{ImageTransparency=1}):Play()
-al(aw.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=aq=="Dropdown"and 0.4 or 0.05}):Play()
+al(aw.UIElements.TabItem.Frame.TextLabel,0.1,{TextTransparency=aq=="Dropdown"and 0.4 or 0.05}):Play()
 if aw.UIElements.TabIcon then
 al(aw.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=aq=="Dropdown"and 0.2 or 0}):Play()
 end
@@ -6725,25 +6725,17 @@ FillDirection="Horizontal",
 VerticalAlignment="Center",
 }),
 ak("UIPadding",{
-PaddingTop=UDim.new(0,ao.TabPadding),
 PaddingLeft=UDim.new(0,ao.TabPadding),
 PaddingRight=UDim.new(0,ao.TabPadding),
-PaddingBottom=UDim.new(0,ao.TabPadding),
 }),
 ak("UICorner",{
 CornerRadius=UDim.new(0,ao.MenuCorner-ao.MenuPadding)
 }),
 aA,
-ak("Frame",{
-Size=UDim2.new(1,aA and-ao.TabPadding-ao.TabIcon or 0,0,0),
-BackgroundTransparency=1,
-AutomaticSize="Y",
-Name="Title",
-},{
 ak("TextLabel",{
 Text=az.Name,
 TextXAlignment="Left",
-FontFace=Font.new(aj.Font,Enum.FontWeight.Medium),
+FontFace=Font.new(aj.Font,Enum.FontWeight.Regular),
 ThemeTag={
 TextColor3="Text",
 BackgroundColor3="Text"
@@ -6753,36 +6745,16 @@ BackgroundTransparency=1,
 TextTransparency=aq=="Dropdown"and.4 or.05,
 LayoutOrder=999,
 AutomaticSize="Y",
-Size=UDim2.new(1,0,0,0),
-}),
-ak("TextLabel",{
-Text=az.Desc or"",
-TextXAlignment="Left",
-FontFace=Font.new(aj.Font,Enum.FontWeight.Regular),
-ThemeTag={
-TextColor3="Text",
-BackgroundColor3="Text"
-},
-TextSize=15,
-BackgroundTransparency=1,
-TextTransparency=aq=="Dropdown"and.6 or.35,
-LayoutOrder=999,
-AutomaticSize="Y",
-TextWrapped=true,
-Size=UDim2.new(1,0,0,0),
-Visible=az.Desc and true or false,
-Name="Desc",
-}),
-ak("UIListLayout",{
-Padding=UDim.new(0,ao.TabPadding/3),
-FillDirection="Vertical",
-}),
+Size=UDim2.new(1,aA and-ao.TabPadding-ao.TabIcon or 0,0,0),
+AnchorPoint=Vector2.new(0,0.5),
+Position=UDim2.new(0,0,0.5,0),
+Name="TextLabel",
 })
 })
 },true)
 
 if az.Locked then
-az.UIElements.TabItem.Frame.Title.TextLabel.TextTransparency=0.6
+az.UIElements.TabItem.Frame.TextLabel.TextTransparency=0.6
 if az.UIElements.TabIcon then
 az.UIElements.TabIcon.ImageLabel.ImageTransparency=0.6
 end
@@ -6818,7 +6790,7 @@ end
 if az.Selected and not az.Locked then
 az.UIElements.TabItem.ImageTransparency=.95
 az.UIElements.TabItem.Highlight.ImageTransparency=.75
-az.UIElements.TabItem.Frame.Title.TextLabel.TextTransparency=0
+az.UIElements.TabItem.Frame.TextLabel.TextTransparency=0
 if az.UIElements.TabIcon then
 az.UIElements.TabIcon.ImageLabel.ImageTransparency=0
 end
@@ -6837,7 +6809,7 @@ if not az.Selected then
 az.Selected=true
 al(az.UIElements.TabItem,0.1,{ImageTransparency=.95}):Play()
 al(az.UIElements.TabItem.Highlight,0.1,{ImageTransparency=.75}):Play()
-al(az.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=0}):Play()
+al(az.UIElements.TabItem.Frame.TextLabel,0.1,{TextTransparency=0}):Play()
 if az.UIElements.TabIcon then
 al(az.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=0}):Play()
 end
@@ -6849,7 +6821,7 @@ end
 az.Selected=false
 al(az.UIElements.TabItem,0.1,{ImageTransparency=1}):Play()
 al(az.UIElements.TabItem.Highlight,0.1,{ImageTransparency=1}):Play()
-al(az.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=.4}):Play()
+al(az.UIElements.TabItem.Frame.TextLabel,0.1,{TextTransparency=.4}):Play()
 if az.UIElements.TabIcon then
 al(az.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=.2}):Play()
 end
@@ -6865,7 +6837,7 @@ else
 for aB,aC in next,an.Tabs do
 al(aC.UIElements.TabItem,0.1,{ImageTransparency=1}):Play()
 al(aC.UIElements.TabItem.Highlight,0.1,{ImageTransparency=1}):Play()
-al(aC.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=.4}):Play()
+al(aC.UIElements.TabItem.Frame.TextLabel,0.1,{TextTransparency=.4}):Play()
 if aC.UIElements.TabIcon then
 al(aC.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=.2}):Play()
 end
@@ -6874,7 +6846,7 @@ end
 az.Selected=true
 al(az.UIElements.TabItem,0.1,{ImageTransparency=.95}):Play()
 al(az.UIElements.TabItem.Highlight,0.1,{ImageTransparency=.75}):Play()
-al(az.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=0}):Play()
+al(az.UIElements.TabItem.Frame.TextLabel,0.1,{TextTransparency=0}):Play()
 if az.UIElements.TabIcon then
 al(az.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=0}):Play()
 end
