@@ -811,7 +811,7 @@ local f={
 Size=UDim2.new(0,300,1,-156),
 SizeLower=UDim2.new(0,300,1,-56),
 UICorner=13,
-UIPadding=14,
+UIPadding=10,
 
 Holder=nil,
 NotificationIndex=0,
@@ -1749,7 +1749,7 @@ TextColor3="Text",
 })
 
 local aq=ac("Frame",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 Parent=ag,
 BackgroundTransparency=1
 },{
@@ -2113,7 +2113,7 @@ TextWrapped=true,
 end
 
 local ax=ac("Frame",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 BackgroundTransparency=1,
 },{
 ac("Frame",{
@@ -2200,7 +2200,7 @@ end,"Tertiary",ax.Frame)
 
 if ay then
 az.Parent=ay
-az.Size=UDim2.new(0,0,0,42)
+az.Size=UDim2.new(0,0,0,34)
 az.Position=UDim2.new(0,10,1,-10)
 az.AnchorPoint=Vector2.new(0,1)
 end
@@ -2968,7 +2968,7 @@ TextWrapped=true,
 end
 
 local ap=ac("Frame",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 BackgroundTransparency=1,
 },{
 ac("UIListLayout",{
@@ -3367,7 +3367,7 @@ Text=ae,
 })
 
 local am=ac("TextButton",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 Parent=ag,
 BackgroundTransparency=1,
 Text="",
@@ -5292,7 +5292,7 @@ local ah=a.load'z'(af)
 ag.ParagraphFrame=ah
 if af.Buttons and#af.Buttons>0 then
 local ai=ab("Frame",{
-Size=UDim2.new(1,0,0,38),
+Size=UDim2.new(1,0,0,32),
 BackgroundTransparency=1,
 AutomaticSize="Y",
 Parent=ah.UIElements.Container
@@ -5306,7 +5306,7 @@ FillDirection="Vertical",
 
 for aj,ak in next,af.Buttons do
 local al=ad(ak.Title,ak.Icon,ak.Callback,"White",ai,nil,nil,af.Window.NewElements and 12 or 10)
-al.Size=UDim2.new(1,0,0,38)
+al.Size=UDim2.new(1,0,0,32)
 
 end
 end
@@ -6328,7 +6328,7 @@ aj.ClearTextOnFocus
 )
 
 if aj.Type=="Input"then
-al.Size=UDim2.new(0,aj.Width,0,36)
+al.Size=UDim2.new(0,aj.Width,0,30)
 al.Position=UDim2.new(1,0,ai.Window.NewElements and 0 or 0.5,0)
 al.AnchorPoint=Vector2.new(1,ai.Window.NewElements and 0 or 0.5)
 else
@@ -6688,7 +6688,7 @@ aA.ImageLabel.ImageTransparency=aq=="Dropdown"and.2 or 0
 az.UIElements.TabIcon=aA
 end
 az.UIElements.TabItem=aj.NewRoundFrame(ao.MenuCorner-ao.MenuPadding,"Squircle",{
-Size=UDim2.new(1,0,0,36),
+Size=UDim2.new(1,0,0,30),
 ImageTransparency=1,
 Parent=an.UIElements.Menu.Frame.ScrollingFrame,
 ImageColor3=Color3.new(1,1,1),
@@ -7047,7 +7047,7 @@ UICorner=10,
 UIPadding=12,
 MenuCorner=15,
 MenuPadding=5,
-TabPadding=10,
+TabPadding=7,
 SearchBarHeight=39,
 TabIcon=18,
 }
@@ -7100,7 +7100,7 @@ ao.UIElements.Dropdown=ah("",nil,ao.DropdownFrame.UIElements.Main,nil,an.Window.
 ao.UIElements.Dropdown.Frame.Frame.TextLabel.TextTruncate="AtEnd"
 ao.UIElements.Dropdown.Frame.Frame.TextLabel.Size=UDim2.new(1,ao.UIElements.Dropdown.Frame.Frame.TextLabel.Size.X.Offset-18-12-12,0,0)
 
-ao.UIElements.Dropdown.Size=UDim2.new(0,ao.Width,0,36)
+ao.UIElements.Dropdown.Size=UDim2.new(0,ao.Width,0,30)
 ao.UIElements.Dropdown.Position=UDim2.new(1,0,an.Window.NewElements and 0 or 0.5,0)
 ao.UIElements.Dropdown.AnchorPoint=Vector2.new(1,an.Window.NewElements and 0 or 0.5)
 
@@ -10257,7 +10257,7 @@ HideSearchBar=ar.HideSearchBar~=false,
 ScrollBarEnabled=ar.ScrollBarEnabled or false,
 SideBarWidth=ar.SideBarWidth or 200,
 Acrylic=ar.Acrylic or false,
-NewElements=ar.NewElements or false,
+NewElements=ar.NewElements or true,
 IgnoreAlerts=ar.IgnoreAlerts or false,
 HidePanelBackground=ar.HidePanelBackground or false,
 AutoScale=ar.AutoScale~=false,
@@ -10265,7 +10265,7 @@ OpenButton=ar.OpenButton,
 
 Position=UDim2.new(0.5,0,0.5,0),
 UICorner=nil,
-UIPadding=14,
+UIPadding=10,
 UIElements={},
 CanDropdown=true,
 Closed=false,
