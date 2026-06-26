@@ -618,7 +618,7 @@ end
 
 function p.Drag(v,x,B)
 local C
-local F,G,H,O
+local F,G,H
 local J={
 CanDraggable=true
 }
@@ -667,14 +667,14 @@ end)
 M.InputChanged:Connect(function(N)
 if F and C==M then
 if N.UserInputType==Enum.UserInputType.MouseMovement or N.UserInputType==Enum.UserInputType.Touch then
-O=N
+update(N)
 end
 end
 end)
 end
 
 e.InputChanged:Connect(function(N)
-if N==O and F and C~=nil then
+if F and C~=nil then
 if N.UserInputType==Enum.UserInputType.MouseMovement or N.UserInputType==Enum.UserInputType.Touch then
 update(N)
 end
@@ -811,7 +811,7 @@ local f={
 Size=UDim2.new(0,300,1,-156),
 SizeLower=UDim2.new(0,300,1,-56),
 UICorner=13,
-UIPadding=14,
+UIPadding=10,
 
 Holder=nil,
 NotificationIndex=0,
@@ -1749,7 +1749,7 @@ TextColor3="Text",
 })
 
 local aq=ac("Frame",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 Parent=ag,
 BackgroundTransparency=1
 },{
@@ -2113,7 +2113,7 @@ TextWrapped=true,
 end
 
 local ax=ac("Frame",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 BackgroundTransparency=1,
 },{
 ac("Frame",{
@@ -2200,7 +2200,7 @@ end,"Tertiary",ax.Frame)
 
 if ay then
 az.Parent=ay
-az.Size=UDim2.new(0,0,0,42)
+az.Size=UDim2.new(0,0,0,34)
 az.Position=UDim2.new(0,10,1,-10)
 az.AnchorPoint=Vector2.new(0,1)
 end
@@ -2968,7 +2968,7 @@ TextWrapped=true,
 end
 
 local ap=ac("Frame",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 BackgroundTransparency=1,
 },{
 ac("UIListLayout",{
@@ -3367,7 +3367,7 @@ Text=ae,
 })
 
 local am=ac("TextButton",{
-Size=UDim2.new(1,0,0,42),
+Size=UDim2.new(1,0,0,34),
 Parent=ag,
 BackgroundTransparency=1,
 Text="",
@@ -5292,7 +5292,7 @@ local ah=a.load'z'(af)
 ag.ParagraphFrame=ah
 if af.Buttons and#af.Buttons>0 then
 local ai=ab("Frame",{
-Size=UDim2.new(1,0,0,38),
+Size=UDim2.new(1,0,0,32),
 BackgroundTransparency=1,
 AutomaticSize="Y",
 Parent=ah.UIElements.Container
@@ -5306,7 +5306,7 @@ FillDirection="Vertical",
 
 for aj,ak in next,af.Buttons do
 local al=ad(ak.Title,ak.Icon,ak.Callback,"White",ai,nil,nil,af.Window.NewElements and 12 or 10)
-al.Size=UDim2.new(1,0,0,38)
+al.Size=UDim2.new(1,0,0,32)
 
 end
 end
@@ -5454,7 +5454,7 @@ ThemeTag={
 ImageColor3="Text"
 },
 Parent=ap,
-Size=UDim2.new(0,41.6,0,22),
+Size=UDim2.new(0,ak and(52)or(40.8),0,24),
 AnchorPoint=Vector2.new(1,0.5),
 Position=UDim2.new(0,0,0.5,0),
 },{
@@ -5483,7 +5483,7 @@ NumberSequenceKeypoint.new(1,1),
 
 
 ab.NewRoundFrame(an,"Squircle",{
-Size=UDim2.new(0,18,0,18),
+Size=UDim2.new(0,ak and 30 or 20,0,20),
 Position=UDim2.new(0,2,0.5,0),
 AnchorPoint=Vector2.new(0,0.5),
 ImageTransparency=1,
@@ -5530,7 +5530,7 @@ Scale=1,
 local ar
 local as
 
-local at=18
+local at=ak and 30 or 20
 local au=aq.Size.X.Offset
 
 function am.Set(av,aw,ax,ay)
@@ -6328,7 +6328,7 @@ aj.ClearTextOnFocus
 )
 
 if aj.Type=="Input"then
-al.Size=UDim2.new(0,aj.Width,0,36)
+al.Size=UDim2.new(0,aj.Width,0,30)
 al.Position=UDim2.new(1,0,ai.Window.NewElements and 0 or 0.5,0)
 al.AnchorPoint=Vector2.new(1,ai.Window.NewElements and 0 or 0.5)
 else
@@ -6688,7 +6688,8 @@ aA.ImageLabel.ImageTransparency=aq=="Dropdown"and.2 or 0
 az.UIElements.TabIcon=aA
 end
 az.UIElements.TabItem=aj.NewRoundFrame(ao.MenuCorner-ao.MenuPadding,"Squircle",{
-Size=UDim2.new(1,0,0,36),
+Size=UDim2.new(1,0,0,30),
+AutomaticSize=az.Desc and"Y",
 ImageTransparency=1,
 Parent=an.UIElements.Menu.Frame.ScrollingFrame,
 ImageColor3=Color3.new(1,1,1),
@@ -6724,8 +6725,10 @@ FillDirection="Horizontal",
 VerticalAlignment="Center",
 }),
 ak("UIPadding",{
+PaddingTop=UDim.new(0,ao.TabPadding),
 PaddingLeft=UDim.new(0,ao.TabPadding),
 PaddingRight=UDim.new(0,ao.TabPadding),
+PaddingBottom=UDim.new(0,ao.TabPadding),
 }),
 ak("UICorner",{
 CornerRadius=UDim.new(0,ao.MenuCorner-ao.MenuPadding)
@@ -6760,19 +6763,18 @@ ThemeTag={
 TextColor3="Text",
 BackgroundColor3="Text"
 },
-TextSize=11,
+TextSize=15,
 BackgroundTransparency=1,
-TextTransparency=aq=="Dropdown"and.7 or.5,
+TextTransparency=aq=="Dropdown"and.6 or.35,
 LayoutOrder=999,
 AutomaticSize="Y",
-TextWrapped=false,
-TextTruncate="AtEnd",
+TextWrapped=true,
 Size=UDim2.new(1,0,0,0),
 Visible=az.Desc and true or false,
 Name="Desc",
 }),
 ak("UIListLayout",{
-Padding=UDim.new(0,1),
+Padding=UDim.new(0,ao.TabPadding/3),
 FillDirection="Vertical",
 }),
 })
@@ -7047,7 +7049,7 @@ UICorner=10,
 UIPadding=12,
 MenuCorner=15,
 MenuPadding=5,
-TabPadding=10,
+TabPadding=7,
 SearchBarHeight=39,
 TabIcon=18,
 }
@@ -7100,7 +7102,7 @@ ao.UIElements.Dropdown=ah("",nil,ao.DropdownFrame.UIElements.Main,nil,an.Window.
 ao.UIElements.Dropdown.Frame.Frame.TextLabel.TextTruncate="AtEnd"
 ao.UIElements.Dropdown.Frame.Frame.TextLabel.Size=UDim2.new(1,ao.UIElements.Dropdown.Frame.Frame.TextLabel.Size.X.Offset-18-12-12,0,0)
 
-ao.UIElements.Dropdown.Size=UDim2.new(0,ao.Width,0,36)
+ao.UIElements.Dropdown.Size=UDim2.new(0,ao.Width,0,30)
 ao.UIElements.Dropdown.Position=UDim2.new(1,0,an.Window.NewElements and 0 or 0.5,0)
 ao.UIElements.Dropdown.AnchorPoint=Vector2.new(1,an.Window.NewElements and 0 or 0.5)
 
@@ -10257,7 +10259,7 @@ HideSearchBar=ar.HideSearchBar~=false,
 ScrollBarEnabled=ar.ScrollBarEnabled or false,
 SideBarWidth=ar.SideBarWidth or 200,
 Acrylic=ar.Acrylic or false,
-NewElements=ar.NewElements or false,
+NewElements=ar.NewElements or true,
 IgnoreAlerts=ar.IgnoreAlerts or false,
 HidePanelBackground=ar.HidePanelBackground or false,
 AutoScale=ar.AutoScale~=false,
@@ -10265,7 +10267,7 @@ OpenButton=ar.OpenButton,
 
 Position=UDim2.new(0.5,0,0.5,0),
 UICorner=nil,
-UIPadding=14,
+UIPadding=10,
 UIElements={},
 CanDropdown=true,
 Closed=false,
