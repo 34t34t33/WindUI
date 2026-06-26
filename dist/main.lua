@@ -618,7 +618,7 @@ end
 
 function p.Drag(v,x,B)
 local C
-local F,G,H
+local F,G,H,O
 local J={
 CanDraggable=true
 }
@@ -667,14 +667,14 @@ end)
 M.InputChanged:Connect(function(N)
 if F and C==M then
 if N.UserInputType==Enum.UserInputType.MouseMovement or N.UserInputType==Enum.UserInputType.Touch then
-update(N)
+O=N
 end
 end
 end)
 end
 
 e.InputChanged:Connect(function(N)
-if F and C~=nil then
+if N==O and F and C~=nil then
 if N.UserInputType==Enum.UserInputType.MouseMovement or N.UserInputType==Enum.UserInputType.Touch then
 update(N)
 end
@@ -5454,7 +5454,7 @@ ThemeTag={
 ImageColor3="Text"
 },
 Parent=ap,
-Size=UDim2.new(0,ak and(52)or(40.8),0,24),
+Size=UDim2.new(0,41.6,0,22),
 AnchorPoint=Vector2.new(1,0.5),
 Position=UDim2.new(0,0,0.5,0),
 },{
@@ -5483,7 +5483,7 @@ NumberSequenceKeypoint.new(1,1),
 
 
 ab.NewRoundFrame(an,"Squircle",{
-Size=UDim2.new(0,ak and 30 or 20,0,20),
+Size=UDim2.new(0,18,0,18),
 Position=UDim2.new(0,2,0.5,0),
 AnchorPoint=Vector2.new(0,0.5),
 ImageTransparency=1,
@@ -5530,7 +5530,7 @@ Scale=1,
 local ar
 local as
 
-local at=ak and 30 or 20
+local at=18
 local au=aq.Size.X.Offset
 
 function am.Set(av,aw,ax,ay)
